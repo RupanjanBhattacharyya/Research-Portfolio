@@ -1,0 +1,110 @@
+---
+---
+
+<section class="about" id="about">
+  <div class="container">
+    <span class="section-label">About</span>
+
+    <div class="about-grid">
+      <div class="about-content">
+        <p>
+          Modern artificial intelligence has outgrown the hardware built to serve it. Every
+          transformer inference and every edge-deployed vision model still moves its weights across
+          the same von&nbsp;Neumann boundary that separates memory from computation — and under real
+          energy and latency budgets, that boundary is where most of the cost disappears. My
+          research is an attempt to work on both sides of it: the <strong>device physics</strong> of
+          memristive memory, and the <strong>compute-in-memory architectures</strong> that turn those
+          devices into usable accelerators.
+        </p>
+        <p>
+          At <strong>IIT&nbsp;Madras</strong> I reformulated the voltage-dependent capacitance of a
+          hafnium-oxide resistive-memory device as a chemical-kinetics problem and built a
+          SPICE-compatible compact model for it. At <strong>IIT&nbsp;Roorkee</strong> I mapped a
+          Vision Transformer onto a memristor-crossbar accelerator and treated its device
+          non-idealities as constraints to design against, not noise to correct after the fact. And
+          at <strong>CSIR&ndash;CSIO</strong> I learned what edge deployment costs in practice — laying
+          out the analog front-end, the ADC interface, and the real-time software myself.
+        </p>
+        <p>
+          I want to keep working at the interface where the interesting problems in this field
+          actually live: co-designing the device and the architecture together, toward
+          energy-efficient hardware for edge AI and dense, non-volatile storage on the same physical
+          substrate.
+        </p>
+      </div>
+
+      <div class="about-education">
+        <h3 class="about-education-title">Education</h3>
+        <div class="edu-item">
+          <span class="edu-degree">B.Tech, Electrical Engineering</span>
+          <span class="edu-school">Indian Institute of Engineering Science and Technology, Shibpur · 2023–2027</span>
+          <span class="edu-note">CGPA 8.07/10 · GATE&nbsp;EE All-India Rank 4613</span>
+        </div>
+        <div class="edu-item">
+          <span class="edu-degree">CBSE — AISSCE &amp; AISSE</span>
+          <span class="edu-school">DAV Model School, IIT Kharagpur</span>
+          <span class="edu-note">Class XII: 92.6% · Class X: 97%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1.6fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .about-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: var(--leading-relaxed);
+  }
+
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-content strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .about-education-title {
+    font-size: var(--text-subhead);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+  }
+
+  .edu-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .edu-degree {
+    font-weight: 600;
+    font-size: var(--text-small);
+    color: var(--color-text-primary);
+  }
+
+  .edu-school {
+    font-size: var(--text-small);
+    color: var(--color-text-secondary);
+  }
+
+  .edu-note {
+    font-size: var(--text-micro);
+    color: var(--color-text-tertiary);
+  }
+</style>

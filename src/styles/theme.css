@@ -1,0 +1,82 @@
+/* ============================================
+   Color tokens — light "paper" mode default
+   ============================================ */
+:root {
+  --color-bg-primary:    #f7f4ee;
+  --color-bg-secondary:  #efeae0;
+  --color-bg-elevated:   #fffdf8;
+
+  --color-text-primary:  #211f1c;
+  --color-text-secondary:#57534c;
+  --color-text-tertiary: #8a8378;
+
+  --color-accent:        #2f5d76;
+  --color-accent-dim:    #244a5e;
+  --color-accent-glow:   rgba(47, 93, 118, 0.08);
+
+  --color-border:        rgba(33, 31, 28, 0.14);
+  --color-border-hover:  rgba(33, 31, 28, 0.3);
+  --color-rule:          rgba(33, 31, 28, 0.22);
+}
+
+/* ============================================
+   Dark mode — system preference
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg-primary:    #1c1a17;
+    --color-bg-secondary:  #232019;
+    --color-bg-elevated:   #2a2620;
+
+    --color-text-primary:  #ece7dd;
+    --color-text-secondary:#b3aca0;
+    --color-text-tertiary: #7d766a;
+
+    --color-accent:        #8fb8d4;
+    --color-accent-dim:    #aecde2;
+    --color-accent-glow:   rgba(143, 184, 212, 0.08);
+
+    --color-border:        rgba(236, 231, 221, 0.14);
+    --color-border-hover:  rgba(236, 231, 221, 0.3);
+    --color-rule:          rgba(236, 231, 221, 0.22);
+  }
+}
+
+/* ============================================
+   Manual overrides via data-theme attribute
+   ============================================ */
+[data-theme="light"] {
+  --color-bg-primary:    #f7f4ee;
+  --color-bg-secondary:  #efeae0;
+  --color-bg-elevated:   #fffdf8;
+
+  --color-text-primary:  #211f1c;
+  --color-text-secondary:#57534c;
+  --color-text-tertiary: #8a8378;
+
+  --color-accent:        #2f5d76;
+  --color-accent-dim:    #244a5e;
+  --color-accent-glow:   rgba(47, 93, 118, 0.08);
+
+  --color-border:        rgba(33, 31, 28, 0.14);
+  --color-border-hover:  rgba(33, 31, 28, 0.3);
+  --color-rule:          rgba(33, 31, 28, 0.22);
+}
+
+[data-theme="dark"] {
+  --color-bg-primary:    #1c1a17;
+  --color-bg-secondary:  #232019;
+  --color-bg-elevated:   #2a2620;
+
+  --color-text-primary:  #ece7dd;
+  --color-text-secondary:#b3aca0;
+  --color-text-tertiary: #7d766a;
+
+  --color-accent:        #8fb8d4;
+  --color-accent-dim:    #aecde2;
+  --color-accent-glow:   rgba(143, 184, 212, 0.08);
+
+  --color-border:        rgba(236, 231, 221, 0.14);
+  --color-border-hover:  rgba(236, 231, 221, 0.3);
+  --color-rule:          rgba(236, 231, 221, 0.22);
+}

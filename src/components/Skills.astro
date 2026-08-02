@@ -1,0 +1,122 @@
+---
+import { skills } from '../data/skills';
+import { certifications } from '../data/certifications';
+---
+
+<section class="skills" id="skills">
+  <div class="container">
+    <span class="section-label">Technical Skills &amp; Certifications</span>
+
+    <div class="skills-grid">
+      {skills.map((group) => (
+        <div class="skill-group">
+          <h3 class="skill-group-title">{group.label}</h3>
+          <ul class="skill-items">
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="certs">
+      <h3 class="certs-title">Professional Development</h3>
+      <ul class="certs-list">
+        {certifications.map((c) => (
+          <li class="cert-item">
+            <span class="cert-name">{c.title}</span>
+            <span class="cert-meta">{c.issuer} · {c.date}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    gap: 2rem 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .skill-group-title {
+    font-size: var(--text-small);
+    font-weight: 600;
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .skill-items {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-items li {
+    font-size: var(--text-micro);
+    color: var(--color-text-secondary);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+  }
+
+  .certs {
+    border-top: 1px solid var(--color-rule);
+    padding-top: 2rem;
+  }
+
+  .certs-title {
+    font-size: var(--text-subhead);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+  }
+
+  .certs-list {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .certs-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem 2.5rem;
+    }
+  }
+
+  .cert-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cert-name {
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .cert-meta {
+    font-size: var(--text-micro);
+    color: var(--color-text-tertiary);
+  }
+</style>

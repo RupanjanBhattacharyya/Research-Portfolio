@@ -1,0 +1,79 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { site } from '../data/site';
+---
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a href="#" class="masthead-name">{site.name}</a>
+
+    <nav class="masthead-links" aria-label="Site navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#honors">Honors</a>
+      <a href="#contact">Contact</a>
+      <ThemeToggle />
+    </nav>
+  </div>
+</header>
+
+<style>
+  .masthead {
+    border-bottom: 1px solid var(--color-rule);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--color-bg-primary) 88%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .masthead-inner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1rem;
+  }
+
+  .masthead-name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .masthead-name:hover {
+    color: var(--color-accent);
+  }
+
+  .masthead-links {
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+  }
+
+  .masthead-links a {
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+
+  .masthead-links a:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 560px) {
+    .masthead-links {
+      gap: 0.85rem;
+    }
+    .masthead-links a {
+      font-size: var(--text-micro);
+    }
+  }
+</style>

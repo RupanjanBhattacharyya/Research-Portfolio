@@ -1,0 +1,124 @@
+---
+import { Image } from 'astro:assets';
+import headshot from '../assets/headshot.png';
+import { site } from '../data/site';
+---
+
+<section class="intro" id="intro">
+  <div class="container intro-inner">
+    <div class="intro-text">
+      <p class="intro-kicker">B.Tech Electrical Engineering · IIEST Shibpur</p>
+
+      <h1 class="intro-headline">
+        Engineering the gap between nano-scale devices and the architectures that run AI.
+      </h1>
+
+      <p class="intro-bio">
+        I'm an undergraduate researcher working on both sides of the von&nbsp;Neumann boundary at
+        once — deriving the physics of the memristive devices that make compute-in-memory possible,
+        and mapping those devices into the crossbar architectures, peripheral circuits, and
+        mitigation strategies that let them survive contact with a real accelerator. My work spans
+        device-level compact modeling at <strong>IIT&nbsp;Madras</strong>, memristor-transformer
+        acceleration at <strong>IIT&nbsp;Roorkee</strong>, and real-time embedded systems at
+        <strong>CSIR&ndash;CSIO</strong>.
+      </p>
+
+      <p class="intro-links">
+        <a href={`mailto:${site.email}`}>Email</a>
+        <span aria-hidden="true">·</span>
+        <a href={site.cv}>CV</a>
+        <span aria-hidden="true">·</span>
+        <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span aria-hidden="true">·</span>
+        <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </div>
+
+    <div class="intro-photo">
+      <Image
+        src={headshot}
+        alt="Rupanjan Bhattacharyya"
+        width={640}
+        height={640}
+        format="webp"
+        quality={82}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro {
+    padding-top: 4.5rem;
+  }
+
+  .intro-inner {
+    display: grid;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .intro-inner {
+      grid-template-columns: 1.6fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .intro-kicker {
+    font-size: var(--text-micro);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-headline {
+    font-size: var(--text-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    text-wrap: balance;
+  }
+
+  .intro-bio {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: 2rem;
+    max-width: 58ch;
+  }
+
+  .intro-bio strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .intro-links {
+    font-size: var(--text-small);
+    color: var(--color-text-tertiary);
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .intro-photo {
+    max-width: 320px;
+  }
+
+  .intro-photo :global(img) {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-rule);
+    padding: 0.4rem;
+    background: var(--color-bg-elevated);
+  }
+
+  @media (max-width: 767px) {
+    .intro-photo {
+      max-width: 240px;
+    }
+  }
+</style>
