@@ -6,6 +6,7 @@ import { defineConfig } from 'astro/config';
 // change `site` to 'https://rupanjanbhattacharyya.github.io' AND add: base: '/portfolio'
 export default defineConfig({
   site: 'https://rupanjanbhattacharyya.github.io',
+  base: '/Research-Portfolio',
   output: 'static',
   image: {
     // Some research figures are very high-resolution; lift Sharp's input pixel cap

@@ -10,6 +10,10 @@ const {
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
+
+// Respects `base` in astro.config.mjs so favicons resolve correctly whether
+// deployed as a user site or a project site. Normalized to exactly one trailing slash.
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <!DOCTYPE html>
@@ -33,10 +37,10 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32x32.png`} />
+    <link rel="icon" type="image/png" sizes="16x16" href={`${base}favicon-16x16.png`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}apple-touch-icon.png`} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

@@ -7,7 +7,9 @@ export const site = {
   emailAlt: '2023eeb106.rupanjan@students.iiests.ac.in',
   phone: '+91-9474145879',
   location: 'Howrah, West Bengal, India',
-  cv: '/cv.pdf',
+  // Normalized to one trailing slash so the CV link stays correct under both
+  // user-site and project-site deploys (respects `base` in astro.config.mjs).
+  cv: `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}cv.pdf`,
   github: 'https://github.com/RupanjanBhattacharyya',
   linkedin: 'https://www.linkedin.com/in/rupanjan-bhattacharyya/',
 };
